@@ -46,9 +46,11 @@ class Calculator : ICalculator{
                 when (v) {
                     "+" -> stack.push(val2+val1);
                     "-" -> stack.push(val2-val1);
-                    "/" -> stack.push(val2/val1);
                     "*" -> stack.push(val2*val1);
                     "^" -> stack.push(val2.pow(val1));
+                    "%" -> stack.push(val2%val1)
+                    "/" -> stack.push(val2/val1);
+
 
                 }
             }

@@ -76,4 +76,9 @@ class UnitTest {
         calculator.evaluate("1000*2")
         assertEquals(2000.0,calculator.getPrevious())
     }
+
+    @Test
+    fun ModuleTest() {
+        assertEquals(0.0,calculator.evaluate("6%2"))
+    }
 }
