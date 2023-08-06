@@ -30,23 +30,24 @@ public class InfixTranslator {
 
             else if (c == ')'){
                 while (!stack.isEmpty() && stack.peek() != '(') {
-                    result += stack.peek();
+                    result += "," + stack.peek();
                     stack.pop();
                 }
                 stack.pop();
             } else {
                 while (!stack.isEmpty() && Prec(c) <= Prec(stack.peek())) {
-                    result += stack.peek();
+                    result += "," + stack.peek();
                     stack.pop();
                 }
                 stack.push(c);
+                result += ",";
             }
         }
 
         while (!stack.isEmpty()) {
             if (stack.peek() == '(')
                 return "Expresión inválida";
-            result += stack.peek();
+            result += "," + stack.peek();
             stack.pop();
         }
         return result;
