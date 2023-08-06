@@ -7,6 +7,7 @@ import kotlin.math.pow
 
 class Calculator : ICalculator{
 
+    private var previous : Double = 0.0
     fun isNumeric(s : String) : Boolean {
         return try {
             s.toDouble()
@@ -43,11 +44,11 @@ class Calculator : ICalculator{
                 }
             }
         }
-
-        return df.format(stack.peek()).toDouble();
+        previous = df.format(stack.peek()).toDouble()
+        return previous as Double;
     }
 
     override fun getPrevious(): Double {
-        TODO("Not yet implemented")
+        return previous
     }
 }

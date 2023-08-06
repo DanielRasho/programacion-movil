@@ -69,4 +69,11 @@ class UnitTest {
     fun calculatorPowerTest() {
         assertEquals(64.0,calculator.evaluate("2^6"))
     }
+
+    @Test
+    fun PreviousTest() {
+        calculator.evaluate("2^6")
+        calculator.evaluate("1000*2")
+        assertEquals(2000.0,calculator.getPrevious())
+    }
 }
