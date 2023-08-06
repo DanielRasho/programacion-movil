@@ -1,4 +1,6 @@
 package uvg.edu.gt.myapplication.Model;
 
-public class Stack {
+public class InfixTranslator {
+
+    
 }
