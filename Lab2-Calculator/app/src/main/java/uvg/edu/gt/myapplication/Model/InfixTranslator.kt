@@ -22,7 +22,7 @@ public class InfixTranslator {
 
         for (c in expression){
 
-            if (Character.isLetterOrDigit(c))
+            if (Character.isLetterOrDigit(c) || c == '.')
                 result += c;
 
             else if (c == '(')

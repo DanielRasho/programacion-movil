@@ -9,11 +9,21 @@ class UnitTest {
 
     @Test
     fun translationTest() {
-        assertEquals("20,26,+,8,/",translator.infixToPostfix("(20+26)/8"))
+        assertEquals("2,6,+,8,/",translator.infixToPostfix("(2+6)/8"))
     }
 
     @Test
-    fun translationParentesisTest() {
+    fun translationTensTest() {
         assertEquals("2,6,^,8,-,9,+,700,*,12,-",translator.infixToPostfix("((2^6-8+9)*700)-12"))
+    }
+
+    @Test
+    fun translationDecimalsTest() {
+        assertEquals("1.2,1,+",translator.infixToPostfix("1.2+1"))
+    }
+
+    @Test
+    fun translationDecimalsTensParentesisTest() {
+        assertEquals("1.2,1,+,98.63,*",translator.infixToPostfix("(1.2+1)*98.63"))
     }
 }
