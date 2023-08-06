@@ -20,6 +20,8 @@
     <string name="multiplication">x</string>
     <string name="divition">÷</string>
     <string name="potent">^</string>
+    <string name="answer_here">Answer Here</string>
+    <string name="preview_text">Preview Text</string>
 
 
 </resources>

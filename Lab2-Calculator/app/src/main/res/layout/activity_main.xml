@@ -29,16 +29,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="26dp" />
 
-    <EditText
-        android:id="@+id/operation"
-        android:layout_width="360dp"
-        android:layout_height="122dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="40dp" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
@@ -388,6 +378,22 @@
         android:layout_width="165dp"
         android:layout_height="49dp"
         tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="162dp" />
+        tools:layout_editor_absoluteY="162dp"
+        android:textColor="@color/lightgray"
+        android:text="@string/preview_text"
+        android:textSize="30sp"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:id="@+id/operation"
+        android:layout_width="356dp"
+        android:layout_height="73dp"
+        android:text="@string/answer_here"
+        android:textAlignment="textEnd"
+        android:textSize="50sp"
+
+
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="89dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
