@@ -8,7 +8,7 @@ public interface IStack<T> {
 
     fun push(value : T);
 
-    fun pop() : T;
+    fun pop();
 
 
     fun peek() : T;

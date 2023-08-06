@@ -1,7 +1,13 @@
 package uvg.edu.gt.myapplication.Model;
 
+
 public class InfixTranslator {
 
+    /*
+    @param C
+    @return Int
+    Returns a value by the arithmetic symbol
+     */
     fun Prec(c : Char) : Int {
         when (c) {
             '+' -> return 1;
@@ -15,6 +21,11 @@ public class InfixTranslator {
         return -1;
     }
 
+    /*
+    @param expression
+    @return String
+    Translate an arithmetic infix expression to an arithmetic postfix expression
+     */
     fun infixToPostfix(expression : String) : String {
         var result : String = "";
 

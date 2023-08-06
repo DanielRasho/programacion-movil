@@ -1,13 +1,17 @@
 package uvg.edu.gt.myapplication.Model
 
-import androidx.core.text.isDigitsOnly
-import java.math.RoundingMode
 import java.text.DecimalFormat
 import kotlin.math.pow
 
 class Calculator : ICalculator{
 
     private var previous : Double = 0.0
+
+    /*
+    @param s
+    @return Boolean
+    Identifies if a String is a numeric value
+    */
     fun isNumeric(s : String) : Boolean {
         return try {
             s.toDouble()
@@ -17,6 +21,11 @@ class Calculator : ICalculator{
         }
     }
 
+    /*
+    @param expression
+    @return Double
+    Evaluate the infix expression
+     */
     override fun evaluate(expression: String): Double {
         var stack : Stack<Double> = Stack();
         val df = DecimalFormat("#.##");
@@ -48,6 +57,10 @@ class Calculator : ICalculator{
         return previous as Double;
     }
 
+    /*
+    @return Double
+    Obtain the previous result
+     */
     override fun getPrevious(): Double {
         return previous
     }
