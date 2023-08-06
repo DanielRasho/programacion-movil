@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import uvg.edu.gt.myapplication.Model.Calculator
+import uvg.edu.gt.myapplication.Model.ICalculator
 import uvg.edu.gt.myapplication.Model.InfixTranslator
 import uvg.edu.gt.myapplication.ui.theme.MyApplicationTheme
 
