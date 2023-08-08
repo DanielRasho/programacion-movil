@@ -1,28 +1,18 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
+class Main
+class Calculator
+class Stack
+class InfixTranslator
 
-abstract AbstractCollection
-interface List
-interface Collection
+interface ICalculator
+interface IStack
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
-}
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
-}
+Main "uses" ..> ICalculator
+Calculator .|> ICalculator
+Calculator "uses" ..> IStack
+Calculator *-left-> InfixTranslator
+Stack .|> IStack
 
 @enduml
