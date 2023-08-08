@@ -19,7 +19,10 @@ import uvg.edu.gt.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
 
-    var currentOperation : String = "";
+    var calculator: ICalculator = Calculator();
+    var currentOperation : String = ""
+    var lastOperation : String = ""
+
     var operationTxt : TextView ? = null;
     var previewTxt : TextView ? = null;
 
@@ -44,6 +47,7 @@ class MainActivity : ComponentActivity() {
     var twoBtn: Button ? = null;
     var oneBtn: Button ? = null;
     var zeroBtn: Button ? = null;
+    var pointBtn: Button ? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +56,87 @@ class MainActivity : ComponentActivity() {
         initializeMiscOperators()
         initializeOperators()
         initializeNumberBtn()
+        addOnClick()
+    }
+
+    private fun addOperator(value: String){
+        currentOperation += value;
+        previewTxt?.text = currentOperation;
+    }
+
+    private fun addOnClick(){
+
+        equalBtn?.setOnClickListener{
+            var result : Double = calculator.evaluate(currentOperation)
+            lastOperation = result.toString()
+            currentOperation = ""
+            operationTxt?.text = lastOperation
+            previewTxt?.text = currentOperation
+        }
+
+        deleteBtn?.setOnClickListener {
+            if (currentOperation.isNotEmpty())
+                currentOperation = currentOperation.substring(0, currentOperation.length - 1);
+            previewTxt?.text = currentOperation;
+        }
+
+        answerBtn?.setOnClickListener {
+            if (lastOperation.isNotEmpty())
+                addOperator(lastOperation)
+        }
+
+        divisionBtn?.setOnClickListener{
+            addOperator("/")
+        }
+        moduleBtn?.setOnClickListener{
+            addOperator("%")
+        }
+        powerBtn?.setOnClickListener{
+            addOperator("^")
+        }
+        multiplicationBtn?.setOnClickListener{
+            addOperator("*")
+        }
+        addBtn?.setOnClickListener{
+            addOperator("+")
+        }
+        minusBtn?.setOnClickListener{
+            addOperator("-")
+        }
+
+        nineBtn?.setOnClickListener{
+            addOperator("9")
+        }
+        eightBtn?.setOnClickListener{
+            addOperator("8")
+        }
+        sevenBtn?.setOnClickListener{
+            addOperator("7")
+        }
+        sixBtn?.setOnClickListener{
+            addOperator("6")
+        }
+        fiveBtn?.setOnClickListener{
+            addOperator("5")
+        }
+        fourBtn?.setOnClickListener{
+            addOperator("4")
+        }
+        threeBtn?.setOnClickListener{
+            addOperator("3")
+        }
+        twoBtn?.setOnClickListener{
+            addOperator("2")
+        }
+        oneBtn?.setOnClickListener{
+            addOperator("1")
+        }
+        zeroBtn?.setOnClickListener{
+            addOperator("0")
+        }
+        zeroBtn?.setOnClickListener{
+            addOperator(".")
+        }
     }
 
     private fun initializeMiscOperators(){
@@ -85,5 +170,6 @@ class MainActivity : ComponentActivity() {
         twoBtn = findViewById(R.id.two)
         oneBtn = findViewById(R.id.one)
         zeroBtn = findViewById(R.id.zero)
+        pointBtn = findViewById(R.id.point)
     }
 }
