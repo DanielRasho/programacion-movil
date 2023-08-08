@@ -10,8 +10,8 @@
         <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$USER_HOME$/OTHERS/MyDocs/COLLEGE/SEMESTERS/4-2023/MOVILES/HOMEWORK/programacion-movil/Lab2-Calculator" />
+            <option value="$USER_HOME$/OTHERS/MyDocs/COLLEGE/SEMESTERS/4-2023/MOVILES/HOMEWORK/programacion-movil/Lab2-Calculator/app" />
           </set>
         </option>
       </GradleProjectSettings>
