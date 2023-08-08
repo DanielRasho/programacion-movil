@@ -134,7 +134,7 @@ class MainActivity : ComponentActivity() {
         zeroBtn?.setOnClickListener{
             addOperator("0")
         }
-        zeroBtn?.setOnClickListener{
+        pointBtn?.setOnClickListener{
             addOperator(".")
         }
     }
