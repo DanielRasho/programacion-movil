@@ -10,9 +10,42 @@ interface ICalculator
 interface IStack
 
 Main "uses" ..> ICalculator
-Calculator .|> ICalculator
+Calculator  .|> ICalculator
 Calculator "uses" ..> IStack
 Calculator *-left-> InfixTranslator
 Stack .|> IStack
+
+class Main {
+    - onCreate(savedInstanceState: Bundle?)
+}
+
+class ICalculator{
+    + evaluate (String): Double
+    + getPrevious() : Double
+}
+
+class Calculator{
+    + evaluate(String): Double
+    + getPrevious():
+    - isNumeric(String): Boolean
+
+}
+
+class InfixTranslator{
+    + Prec(Char): Int
+    + infixToPostfix(String): String
+}
+
+class IStack{
+    + count() : Int
+    + isEmpty() : Boolean
+    + push(T): Unit
+    + pop(): Unit
+    + peek(): T
+}
+
+class Stack{
+    - Stack: ArrayList<T>
+}
 
 @enduml
