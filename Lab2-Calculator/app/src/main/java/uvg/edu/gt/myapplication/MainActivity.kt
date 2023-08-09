@@ -67,11 +67,18 @@ class MainActivity : ComponentActivity() {
     private fun addOnClick(){
 
         equalBtn?.setOnClickListener{
-            var result : Double = calculator.evaluate(currentOperation)
-            lastOperation = result.toString()
-            currentOperation = ""
-            operationTxt?.text = lastOperation
-            previewTxt?.text = currentOperation
+            try {
+                var result : Double = calculator.evaluate(currentOperation)
+                lastOperation = result.toString()
+                operationTxt?.text = lastOperation
+            } catch (e: Exception){
+                lastOperation = ""
+                operationTxt?.text = "Error"
+            } finally {
+                currentOperation = ""
+                previewTxt?.text = currentOperation
+            }
+
         }
 
         deleteBtn?.setOnClickListener {
